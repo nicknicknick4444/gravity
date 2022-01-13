@@ -1,4 +1,4 @@
-"""Generates a dictionary to calculate falling speed in m\s, then asks the user for input re time and speed. Eounds up or down liberally when performing lookups."""
+"""Generates a dictionary to calculate falling speed in m\s, then asks the user for input re. time and speed. Eounds up or down liberally when performing lookups."""
 
 def gravity(sec):
     return round(sec*9.8,2)
@@ -30,7 +30,7 @@ def speed(s,grav_dict):
                     return grav_dict[key-1], key-1
         elif key == 6 and s > grav_dict[key]:
             return 555, key
-        elif key == 0 and s == 0:
+        elif key == 0 and s <= 0:
             return 0, key
 
 def time_ask(grav_dict):
@@ -46,7 +46,7 @@ def time_ask(grav_dict):
         else:
             ti = int(ti)
     sp = time(ti,grav_dict)
-    if sp <= 0:
+    if sp == 0 or sp == None:
         print("You haven't let go of the ball yet.\n")
     else:
         print("The ball is falling at about {} meters/second.\n".format(sp))
@@ -68,7 +68,7 @@ def speed_ask(grav_dict):
             print("Your ball has been falling for at least {} seconds.\n".format(ti[1]))
         elif ti[0] == 888:
             print("Your ball hasn't even fallen for a second yet.\n")
-        elif ti[0] <= 0:
+        elif ti[0] == 0 or ti[0] == None:
             print("You haven't let go of the ball yet.\n")
         elif ti[1] == 1:
             print("Your ball has been falling for about {} second.\n".format(ti[1]))
