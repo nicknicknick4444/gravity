@@ -1,4 +1,4 @@
-"""Generates a dictionary to calculate falling speed in m\s, then asks the user for input re. time and speed. Eounds up or down liberally when performing lookups."""
+"""Generates a dictionary to calculate falling speed in m\s, then asks the user for input re. time and speed. Rounds up or down liberally when performing lookups."""
 
 def gravity(sec):
     return round(sec*9.8,2)
