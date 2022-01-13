@@ -75,18 +75,21 @@ def speed_ask(grav_dict):
         else:
            print("Your ball has been falling for about {} seconds.\n".format(ti[1]))
 
+def go_again():
+    again = input("Go again? (y/n) ")
+    if again == "y":
+        print()
+        return main()
+    else:
+        print("Bye!")
+
 def main():
     grav_dict = make_dict()
     print(grav_dict)
     print()
     time_ask(grav_dict)
     speed_ask(grav_dict)
-    again = input("Go again? (y/n) ")
-    if again == "y":
-        print()
-        return main()
-    else:
-        print("Bye!")    
+    go_again()
 
 if __name__ == "__main__":
     main()
